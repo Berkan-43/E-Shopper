@@ -1,0 +1,17 @@
+{% load static %}
+
+{% if not request.user.is_authenticated %}
+<div class="navbar-nav ml-auto py-0">
+    <a href="{% url 'login' %}" class="nav-item nav-link"><i class="fa-solid fa-user  mx-1"></i>Giriş</a>
+    <a href="{% url 'register' %}" class="nav-item nav-link"><i class="fa-solid fa-lock mx-1"></i>Kayıt</a>
+</div>
+    {% else %}
+    <div class="navbar-nav ml-auto py-0">
+        <a href="{% url 'profile' %}" class="nav-item nav-link text-uppercase"><i class="fa-solid fa-user mx-1"></i>{{user.username}}</a>
+        <a class="nav-item nav-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket me-1 mx-2"></i>Çıkış</a>
+    </div>
+         
+    
+    
+   
+{% endif %}

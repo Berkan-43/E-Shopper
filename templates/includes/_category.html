@@ -1,0 +1,5 @@
+{% load static %} 
+
+ {% for i in category %}
+        <a href="{% url 'category_products' i.slug %}" class="nav-item nav-link">{{i.title}}</a>
+    {% endfor %}
